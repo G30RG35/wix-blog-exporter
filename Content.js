@@ -617,16 +617,27 @@ if (!window.wixBlogExporterLoaded) {
         
         // Agrupar posts por fecha
         const groupedByDate = {};
+        let imageCounter = 1; 
+        
         posts.forEach(post => {
           const fecha = post.fecha;
           if (!groupedByDate[fecha]) {
             groupedByDate[fecha] = [];
           }
           
+          // Determinar nombre incremental y URL de imagen
+          let imagenNombre = "";
+          let imagenUrl = "";
+          if (post.imagen && post.imagen.trim()) {
+            imagenNombre = `${imageCounter}.webp`;
+            imagenUrl = post.imagen; // URL real de la imagen
+            imageCounter++;
+          }
+          
           groupedByDate[fecha].push({
             texto: post.titulo,
-            imagen: post.imagen || "", // Usar la URL real de la imagen
-            url: post.url || ""
+            imagen: imagenNombre,
+            url: imagenUrl
           });
         });
         
@@ -828,16 +839,27 @@ if (!window.wixBlogExporterLoaded) {
 
         // Agrupar por fecha
         const groupedByDate = {};
+        let imageCounter = 1; // Contador global para nombres de imágenes
+        
         allPosts.forEach(post => {
           const fecha = post.fecha;
           if (!groupedByDate[fecha]) {
             groupedByDate[fecha] = [];
           }
           
+          // Determinar nombre incremental y URL de imagen
+          let imagenNombre = "";
+          let imagenUrl = "";
+          if (post.imagen && post.imagen.trim()) {
+            imagenNombre = `${imageCounter}.webp`;
+            imagenUrl = post.imagen; // URL real de la imagen
+            imageCounter++;
+          }
+          
           groupedByDate[fecha].push({
             texto: post.titulo,
-            imagen: post.imagen || "",
-            url: post.url || ""
+            imagen: imagenNombre,
+            url: imagenUrl
           });
         });
         
@@ -945,16 +967,27 @@ if (!window.wixBlogExporterLoaded) {
 
         // Agrupar por fecha
         const groupedByDate = {};
+        let imageCounter = 1; // Contador global para nombres de imágenes
+        
         allPosts.forEach(post => {
           const fecha = post.fecha;
           if (!groupedByDate[fecha]) {
             groupedByDate[fecha] = [];
           }
           
+          // Determinar nombre incremental y URL de imagen
+          let imagenNombre = "";
+          let imagenUrl = "";
+          if (post.imagen && post.imagen.trim()) {
+            imagenNombre = `${imageCounter}.webp`;
+            imagenUrl = post.imagen; // URL real de la imagen
+            imageCounter++;
+          }
+          
           groupedByDate[fecha].push({
             texto: post.titulo,
-            imagen: post.imagen || "",
-            url: post.url || ""
+            imagen: imagenNombre,
+            url: imagenUrl
           });
         });
         
