@@ -1,0 +1,4 @@
+Copyright (c) [Año] [Tu nombre]
+
+Se concede permiso para uso no comercial, estudio y modificación del código, 
+pero se prohíbe su distribución comercial sin autorización expresa.
